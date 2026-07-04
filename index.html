@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>臨床分子栄養医学研究会</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep:    #1c3529;
+      --mid:     #2d5a45;
+      --light:   #4a8567;
+      --accent:  #c8a96e;
+      --bg:      #faf8f5;
+      --bg2:     #f2ede6;
+      --text:    #1a1a18;
+      --muted:   #6b6b65;
+      --border:  #ddd8cf;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(28, 53, 41, 0.97);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--white);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--deep) !important;
+      padding: 8px 20px;
+      font-weight: 500 !important;
+      opacity: 1 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(100deg, rgba(28,53,41,0.97) 35%, rgba(28,53,41,0.82)),
+        url('assets/soukai-2025-0126.jpg') center 30% / cover no-repeat;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 80px 80px;
+      gap: 80px;
+    }
+    .hero-left {}
+    .hero-kicker {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: block;
+    }
+    .hero-headline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      letter-spacing: 0.03em;
+      margin-bottom: 32px;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-body {
+      color: rgba(255,255,255,0.72);
+      font-size: 16px;
+      line-height: 2;
+      max-width: 480px;
+      margin-bottom: 48px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--deep);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.85; }
+    .hero-right {
+      border-left: 1px solid rgba(255,255,255,0.12);
+      padding-left: 80px;
+    }
+    .hero-stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .hero-stat {}
+    .hero-stat-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .hero-stat-num span {
+      font-size: 20px;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+    .hero-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    /* SECTION COMMON */
+    section { padding: 100px 80px; }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 20px;
+      display: block;
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+    }
+
+    /* PROBLEM */
+    .problem {
+      background: var(--bg2);
+    }
+    .problem-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .problem-lead {
+      font-size: 22px;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 600;
+      line-height: 1.75;
+      color: var(--deep);
+      margin-bottom: 40px;
+      border-left: 3px solid var(--light);
+      padding-left: 24px;
+    }
+    .problem-body {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 64px;
+    }
+    .walls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .wall {
+      background: var(--white);
+      padding: 40px 32px;
+    }
+    .wall-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .wall-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--deep);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .wall-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* WHY */
+    .why {
+      background: var(--white);
+    }
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .why-left {}
+    .why-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.8;
+      color: var(--deep);
+      margin-bottom: 32px;
+    }
+    .why-quote strong {
+      font-weight: 700;
+      color: var(--mid);
+    }
+    .why-body {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 2.1;
+    }
+    .why-right {
+      border-left: 1px solid var(--border);
+      padding-left: 64px;
+    }
+    .voice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .voice {
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .voice:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .voice-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .voice-role {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--light);
+      font-weight: 500;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy {
+      background: var(--deep);
+    }
+    .philosophy .section-label { color: var(--accent); opacity: 0.8; }
+    .philosophy .section-title { color: var(--white); }
+    .philosophy-lead {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 620px;
+      line-height: 2;
+      margin-bottom: 56px;
+    }
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 16px;
+    }
+    .principle {
+      background: rgba(255,255,255,0.04);
+      padding: 48px 36px;
+      border-top: 2px solid var(--accent);
+      transition: background 0.2s;
+    }
+    .principle:hover { background: rgba(255,255,255,0.07); }
+    .principle-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.15);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .principle-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+    .principle-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 2;
+    }
+
+    /* CURRICULUM */
+    .curriculum {
+      background: var(--bg);
+    }
+    .curriculum-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .curriculum-subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 56px;
+      max-width: 620px;
+      line-height: 2;
+    }
+    .pillar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pillar {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      background: var(--white);
+      padding: 40px 44px;
+      border-top: 2px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .pillar:hover { border-top-color: var(--light); }
+    .pillar-core { border-top-color: var(--accent); }
+    .pillar-head {}
+    .pillar-roman {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      letter-spacing: 0.15em;
+      color: var(--light);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .pillar-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--deep);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .pillar-role {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: var(--bg2);
+      padding: 4px 12px;
+    }
+    .pillar-core .pillar-role {
+      color: var(--deep);
+      background: var(--accent);
+      font-weight: 500;
+    }
+    .pillar-themes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-self: center;
+    }
+    .pillar-themes li {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.8;
+      padding-left: 22px;
+      position: relative;
+    }
+    .pillar-themes li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 1px;
+      background: var(--light);
+    }
+    .pillar-themes b {
+      font-weight: 500;
+      color: var(--deep);
+    }
+    .pillar-themes span {
+      color: var(--muted);
+    }
+
+    /* ORDER */
+    .order {
+      background: var(--bg2);
+    }
+    .order-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .order-subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 64px;
+      max-width: 560px;
+    }
+    .order-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+    }
+    .order-steps::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: var(--border);
+    }
+    .order-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .step-circle {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-circle-1 { background: var(--deep); }
+    .step-circle-2 { background: var(--mid); }
+    .step-circle-3 { background: var(--light); }
+    .step-circle-4 { background: var(--accent); color: var(--deep); }
+    .step-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--deep);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .order-note {
+      margin-top: 56px;
+      padding: 28px 36px;
+      background: var(--white);
+      border-left: 3px solid var(--light);
+      font-size: 14px;
+      color: var(--deep);
+      line-height: 1.9;
+      font-weight: 500;
+    }
+
+    /* COMMANDMENTS */
+    .commandments {
+      background: var(--white);
+    }
+    .commandments-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .commandment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .commandment {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 32px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .commandment:first-child { border-top: 1px solid var(--border); }
+    .commandment-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      padding-top: 4px;
+    }
+    .commandment-right {}
+    .commandment-title {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--deep);
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+    .commandment-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--bg2);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 16px;
+    }
+    .testimonial {
+      background: var(--white);
+      padding: 40px 32px;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+    .testimonial-text::before {
+      content: '「';
+      font-family: 'Noto Serif JP', serif;
+      font-size: 32px;
+      color: var(--border);
+      display: block;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .testimonial-role {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--light);
+      font-weight: 500;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    /* COMMUNITY */
+    .community {
+      background: var(--mid);
+    }
+    .community .section-label { color: rgba(255,255,255,0.5); }
+    .community .section-title { color: var(--white); }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .community-card {
+      background: rgba(255,255,255,0.06);
+      padding: 48px 40px;
+    }
+    .community-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+    .community-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .community-list li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      padding-left: 20px;
+      position: relative;
+    }
+    .community-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .about-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-portrait-placeholder {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: var(--bg);
+      padding: 100px 80px;
+    }
+    .gallery-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 320px 260px;
+      gap: 2px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg2);
+    }
+    .gallery-item:first-child {
+      grid-column: 1 / -1;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .gallery-caption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 20px 24px 16px;
+      background: linear-gradient(transparent, rgba(28,53,41,0.85));
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .about-right {}
+    .about-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+    .about-title {
+      font-size: 13px;
+      color: var(--light);
+      letter-spacing: 0.08em;
+      margin-bottom: 36px;
+    }
+    .about-body {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 2.1;
+      margin-bottom: 32px;
+    }
+    .about-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1.75;
+      padding: 32px 36px;
+      background: var(--bg2);
+      border-left: 3px solid var(--accent);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--deep);
+      text-align: center;
+      padding: 120px 80px;
+    }
+    .cta-section .section-label {
+      justify-content: center;
+      color: var(--accent);
+      opacity: 0.8;
+      display: block;
+    }
+    .cta-headline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+    .cta-body {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 56px;
+      line-height: 2;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--deep);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 18px 56px;
+      text-decoration: none;
+      margin-right: 16px;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+    .cta-btn-sub {
+      display: inline-block;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      padding: 18px 40px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cta-btn-sub:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: var(--white);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      padding: 48px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+    .footer-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      section { padding: 72px 24px; }
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 64px; }
+      .hero-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 48px; }
+      .hero-headline { font-size: 34px; }
+      .hero-stat-row { flex-direction: row; flex-wrap: wrap; gap: 24px; }
+      .walls { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; }
+      .why-right { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 48px; }
+      .principles { grid-template-columns: 1fr; }
+      .order-steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+      .order-steps::before { display: none; }
+      .pillar { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+      .gallery { padding: 72px 24px; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-item { aspect-ratio: 3/2; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-portrait { aspect-ratio: 16/9; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="assets/logo-white.png" alt="臨床分子栄養医学研究会ロゴ">臨床分子栄養医学研究会</div>
+  <ul class="nav-links">
+    <li><a href="#why">なぜこの医療か</a></li>
+    <li><a href="#philosophy">哲学</a></li>
+    <li><a href="#curriculum">学ぶ内容</a></li>
+    <li><a href="#voices">受講者の声</a></li>
+    <li><a href="#about">宮澤賢史</a></li>
+    <li><a href="#cta" class="nav-cta">受講を検討する</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-kicker">Clinical Molecular Nutrition Medicine</span>
+    <h1 class="hero-headline">
+      「なぜ？」を問う医療が、<br>
+      日本を<em>変える</em>。
+    </h1>
+    <p class="hero-body">
+      病院に行っても「異常なし」と言われる。サプリを飲み続けているのに、体が変わらない。<br>
+      それは諦めるべき問題ではない。<br><br>
+      理由がある。原因がある。順番がある。
+    </p>
+    <a href="#cta" class="hero-cta">分子栄養学実践講座について</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="hero-stat-num">3,542<span>名</span></div>
+        <div class="hero-stat-label">開校からの総受講者数</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1,200<span>名</span></div>
+        <div class="hero-stat-label">研究会会員（医師・歯科医師・専門家）</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">25,000<span>人以上</span></div>
+        <div class="hero-stat-label">宮澤賢史が診療・解析した症例数</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">22<span>年</span></div>
+        <div class="hero-stat-label">栄養療法の臨床キャリア</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="why">
+  <div class="problem-inner">
+    <span class="section-label">The Problem</span>
+    <div class="problem-lead">
+      日本の栄養療法の多くは、病気の人に<br>
+      健康増進治療をやっている。
+    </div>
+    <p class="problem-body">
+      血液検査をして、低い数値を見つけて、サプリを出す。<br>
+      それは本来、すでに健康な人をさらに調子よくするための手法だ。<br>
+      病気の人の栄養不足は「原因」ではなく「結果」だ。なのに結果だけを埋め続ける。<br>
+      だからサプリが減らない。「一生飲み続けてください」になる。<br><br>
+      アメリカ、オーストラリア、ドイツでは、血液検査は入口にすぎない。<br>
+      機能がどこで止まっているかを見る。日本はまだ、その20年前にいる。
+    </p>
+    <div class="walls">
+      <div class="wall">
+        <div class="wall-num">01</div>
+        <div class="wall-title">自分の体が「なぜ」かわからない</div>
+        <p class="wall-desc">病院では「異常なし」。サプリも試した。でも変わらない。疲れの、眠れなさの、イライラの——根本に何があるのか、誰も教えてくれない。</p>
+      </div>
+      <div class="wall">
+        <div class="wall-num">02</div>
+        <div class="wall-title">知識はあるが、つながっていない</div>
+        <p class="wall-desc">情報は集めた。でも体系がない。何をどの順番でやればいいのか。学べば学ぶほど、最初に何をすべきかわからなくなっていく。</p>
+      </div>
+      <div class="wall">
+        <div class="wall-num">03</div>
+        <div class="wall-title">治療しているのに患者が治らない</div>
+        <p class="wall-desc">「なぜこの患者は良くならないのか」に答えられない。「ストレスですね」で終わらせてきた。その答えに、自分でも納得できていない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="why-inner">
+    <div class="why-left">
+      <span class="section-label">Our Answer</span>
+      <div class="divider"></div>
+      <div class="why-quote">
+        「なぜ」がわかれば、<br>
+        人は動き始める。<br><br>
+        <strong>原因がわかれば、<br>対処できる。</strong>
+      </div>
+      <p class="why-body">
+        副腎が疲れていれば、何をしても体が動かない。腸が荒れていれば、何を食べても栄養にならない。血糖が不安定なら、感情もコントロールできない。<br><br>
+        この研究会が届けるのは「答え」ではなく「なぜ」だ。なぜ栄養が足りなくなるのか。なぜ腸が荒れるのか。なぜサプリを飲み続けても変わらないのか。なぜ順番が大事なのか。<br><br>
+        その「なぜ」がわかった瞬間——受講者たちは同じ言葉を使う。「点と点がつながった」「合点がいった」「全部理由があったんだ」と。<br><br>
+        壁の前で立ち止まっていたのではなく、地図なしで歩いていただけだった。地図が手に入った人間は、動き始める。
+      </p>
+    </div>
+    <div class="why-right">
+      <span class="section-label">Voices</span>
+      <div class="voice-list">
+        <div class="voice">
+          <p class="voice-text">体調不良を自分のせいにして落ち込んでいる人はたくさんいると思う。この知識があれば、仕事も辞めなくてもすんだかもしれない。</p>
+          <div class="voice-role">自営業 / 元うつ症状</div>
+        </div>
+        <div class="voice">
+          <p class="voice-text">薬物療法しかできなかった頃の仕事に対するモチベーションと、分子栄養学を学んだ今では仕事に対する取り組みが雲泥の差だ。これは治療者にとって革命的な変化だと感じている。</p>
+          <div class="voice-role">精神科医</div>
+        </div>
+        <div class="voice">
+          <p class="voice-text">自分の性格だと思っていたイライラや悲しみが少なくなりました。講座に出会う前は全員敵でした。家族でさえも。今は幸せを感じられるようになった。</p>
+          <div class="voice-role">接客業</div>
+        </div>
+        <div class="voice">
+          <p class="voice-text">不調時に病院や医師を頼るのではなく、自分の健康は自分で責任を取るという主体性が出た。他の人の不調の原因だけでなく、それが起こる背景まで想像できるようになった。</p>
+          <div class="voice-role">研究補助</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <span class="section-label">Our Philosophy</span>
+  <h2 class="section-title" style="color: var(--white);">私たちが信じること</h2>
+  <p class="philosophy-lead">
+    診断名ではなく、目の前の一人を診るために。私たちが臨床の根っこに置いている、3つの姿勢だ。技術（診断・治療・処方）は、すべてこの哲学の上に立っている。
+  </p>
+  <div class="principles">
+    <div class="principle">
+      <div class="principle-num">01</div>
+      <div class="principle-title">病気でなく、人を診る</div>
+      <p class="principle-desc">診断名の奥にある、その人自身の物語を診る。治療が終わったとき、患者が自分の治療を自分の言葉で説明できること——それが、本当に人を診た治療の証だ。</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">02</div>
+      <div class="principle-title">体の自然治癒力を信じる</div>
+      <p class="principle-desc">数値を正常に戻すことが目標ではない。体が本来持っている回復力を取り戻すことが目標だ。ゴールは「サプリがいらない体、なんでも食べられる体」をつくること。</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">03</div>
+      <div class="principle-title">患者を依存させず、自立させる</div>
+      <p class="principle-desc">治療とは依存を増やすことではなく、減らすことだ。目標は「この先生がいなくても、自分の体を管理できる患者」を育てること。ゴールは卒業だ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENT ORDER -->
+<section class="order">
+  <div class="order-inner">
+    <span class="section-label">Treatment Sequence</span>
+    <h2 class="section-title">治療には、正しい順番がある</h2>
+    <p class="order-subtitle">順番を守らないと、治療は空回りする。副腎が整わないまま除菌やデトックスをすると具合が悪くなる。これが、他の栄養療法との最大の違いだ。</p>
+    <div class="order-steps">
+      <div class="order-step">
+        <div class="step-circle step-circle-1">副腎</div>
+        <div class="step-title">STEP 1 — HPA軸</div>
+        <p class="step-desc">副腎疲労（HPA軸機能障害）は全ての慢性疾患の根底にある。ここを整えなければ、何も始まらない。</p>
+      </div>
+      <div class="order-step">
+        <div class="step-circle step-circle-2">腸</div>
+        <div class="step-title">STEP 2 — 腸内環境</div>
+        <p class="step-desc">リーキーガット、カンジダ、ピロリ、腸内細菌叢の乱れ。腸が荒れていれば、栄養は吸収されない。</p>
+      </div>
+      <div class="order-step">
+        <div class="step-circle step-circle-3">解毒</div>
+        <div class="step-title">STEP 3 — デトックス</div>
+        <p class="step-desc">重金属・毒素の蓄積がミトコンドリアを阻害する。腸が修復されてから初めて、安全に解毒できる。</p>
+      </div>
+      <div class="order-step">
+        <div class="step-circle step-circle-4">脳</div>
+        <div class="step-title">STEP 4 — 神経・脳機能</div>
+        <p class="step-desc">土台が整って初めて、神経伝達物質・メチレーション・認知機能の改善が意味を持つ。</p>
+      </div>
+    </div>
+    <div class="order-note">
+      副腎→腸→解毒の順序を守ることは、この研究会の最大の独自性であり、他の栄養療法組織との最も重要な差別化点だ。「まとめてやって早く終わらせたい」という患者に、「順番があります」と言い切れること——それが本物の臨床家だ。
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="curriculum-inner">
+    <span class="section-label">What You Learn</span>
+    <h2 class="section-title">何を学ぶのか ——学びの地図</h2>
+    <p class="curriculum-subtitle">
+      研究会の学びは、思いつきの寄せ集めではない。臨床の流れ（考え方 → 診断 → 順番 → 土台 → 道具）に沿って体系化された5つの柱で構成されている。どの発信も、どの症例も、必ずこのどれかに位置づけられる。
+    </p>
+    <div class="pillar-list">
+      <div class="pillar">
+        <div class="pillar-head">
+          <div class="pillar-roman">柱 I</div>
+          <div class="pillar-title">根本原因医学とは何か</div>
+          <span class="pillar-role">考え方 / Why</span>
+        </div>
+        <ul class="pillar-themes">
+          <li><b>症状は下流・原因は上流</b> <span>栄養療法 1.0 と 2.0 の違い／なぜサプリが一生減らないのか</span></li>
+          <li><b>病気でなく人を診る</b> <span>pain（今の苦痛）・gain（得たい状態）・goal（人生の目標）で捉える</span></li>
+          <li><b>自然治癒力を引き出す</b> <span>数値でなく機能を戻す／「サプリのいらない体」というゴール</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-head">
+          <div class="pillar-roman">柱 II</div>
+          <div class="pillar-title">個体を読む</div>
+          <span class="pillar-role">診断 / What</span>
+        </div>
+        <ul class="pillar-themes">
+          <li><b>血液検査の機能的解釈</b> <span>基準値内でも起きる機能低下／ALT・ALP・LDH等の読み方／甲状腺・フェリチンの落とし穴</span></li>
+          <li><b>検査で個体差を測る</b> <span>有機酸検査の5ボトルネック／7大遺伝子パネル／毛髪ミネラル（解毒力の指標）</span></li>
+          <li><b>問診と臨床推論</b> <span>症状群から機能低下を逆算する／遺伝子型より表現型を優先する</span></li>
+        </ul>
+      </div>
+      <div class="pillar pillar-core">
+        <div class="pillar-head">
+          <div class="pillar-roman">柱 III</div>
+          <div class="pillar-title">治療には順番がある</div>
+          <span class="pillar-role">研究会の核 / How</span>
+        </div>
+        <ul class="pillar-themes">
+          <li><b>副腎（HPA軸）が土台</b> <span>副腎疲労はHPA軸の省エネ適応／刺激療法は逆効果／血糖安定が前提</span></li>
+          <li><b>腸 → 肝（解毒）の順</b> <span>腸が荒れていると栄養にならない／解毒は腸の後／副腎からホルモンへの波及</span></li>
+          <li><b>除菌・デトックスは準備が9割</b> <span>除菌前に腸粘膜を整える／排泄経路の確保／ダイオフを避ける段階的アプローチ</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-head">
+          <div class="pillar-roman">柱 IV</div>
+          <div class="pillar-title">食事と生活習慣が主役</div>
+          <span class="pillar-role">土台 / How</span>
+        </div>
+        <ul class="pillar-themes">
+          <li><b>食事（血糖安定）</b> <span>血糖の乱高下を止める／糖質の個体差／グルテン・乳製品の臨床判断</span></li>
+          <li><b>運動</b> <span>Zone2有酸素／筋トレは全ステージ推奨／副腎ステージ別の運動量</span></li>
+          <li><b>睡眠</b> <span>成長ホルモンの2波（21時・深夜）／昼夜逆転の解消／睡眠薬の位置づけ</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-head">
+          <div class="pillar-roman">柱 V</div>
+          <div class="pillar-title">栄養素の使い方</div>
+          <span class="pillar-role">道具 / How</span>
+        </div>
+        <ul class="pillar-themes">
+          <li><b>ドーズレスポンス</b> <span>人によって必要量が違う／メガビタミンが効く機序／用量設計</span></li>
+          <li><b>生体利用性・局在論</b> <span>疾患部位に栄養素が届くか／吸収と形態の選択／処方の順序</span></li>
+          <li><b>サプリは自立のために使う</b> <span>食事の土台なきサプリは砂上の楼閣／減薬・卒業がゴール</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDMENTS -->
+<section class="commandments">
+  <div class="commandments-inner">
+    <span class="section-label">Commandments</span>
+    <h2 class="section-title">これを破れば、世界観が崩れる</h2>
+    <div class="commandment-list">
+      <div class="commandment">
+        <div class="commandment-num">I</div>
+        <div class="commandment-right">
+          <div class="commandment-title">診断より前に仮説を立てるな</div>
+          <p class="commandment-desc">検査データが出る前に「これだろう」と決めつけない。思い込みは根本原因の発見を妨げる最大の敵だ。</p>
+        </div>
+      </div>
+      <div class="commandment">
+        <div class="commandment-num">II</div>
+        <div class="commandment-right">
+          <div class="commandment-title">症状を消すことを目標にしない</div>
+          <p class="commandment-desc">症状は体のシグナルだ。原因を取り除けば、症状は自然に消える。症状を直接消そうとする治療は、シグナルを無視することと同じだ。</p>
+        </div>
+      </div>
+      <div class="commandment">
+        <div class="commandment-num">III</div>
+        <div class="commandment-right">
+          <div class="commandment-title">治療の順序を守れ</div>
+          <p class="commandment-desc">副腎が整わないまま除菌もデトックスもするな。順番を無視した治療は必ず行き詰まる。焦りは治療の敵だ。</p>
+        </div>
+      </div>
+      <div class="commandment">
+        <div class="commandment-num">IV</div>
+        <div class="commandment-right">
+          <div class="commandment-title">サプリを処方する前に食事を確認せよ</div>
+          <p class="commandment-desc">食事・運動・睡眠の土台なしに処方するサプリは砂上の楼閣だ。補充の前に、なぜ足りなくなるのかを問え。</p>
+        </div>
+      </div>
+      <div class="commandment">
+        <div class="commandment-num">V</div>
+        <div class="commandment-right">
+          <div class="commandment-title">患者を依存させるな、自立させよ</div>
+          <p class="commandment-desc">目標は「この先生がいなくても自分の治療を管理できる患者」を育てることだ。依存を増やす治療は、治療ではなくビジネスだ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="voices">
+  <span class="section-label">Voices</span>
+  <h2 class="section-title">受講者の声</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">考えが一変した。患者さんに副腎疲労を見抜くことができるようになり、補食の指導をすることでクライアント様から喜ばれています。</p>
+      <div class="testimonial-role">整体師</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">今まで断片的だった栄養学の知識や治療の進め方が整理でき、頭の中で順序立てて治療方針を組み立てられるようになった。口腔内の症状からその人の栄養状態が予測できるようになり、治療のやり方が変わった。</p>
+      <div class="testimonial-role">歯科医師</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">辞めようかと思っていたので、改善することで続けていける自信がわいた。同じような人がいたら伝えたいという気持ちが強くなった。</p>
+      <div class="testimonial-role">俳優 / 記憶力低下・うつ症状を改善</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">解決方法を探す中での分子栄養学との出会いは衝撃的だった。体調の改善を実感し、今後は自信を持って仕事ができるという安心感が、体調の改善にも結びついている。</p>
+      <div class="testimonial-role">カルチャースクール講師</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">知識があっても「なぜそのことが必要なのか」腑に落ちていなかった。だから知っていても行動に移せなかった。今回の講義で点と点がつながり、お陰で体調が良くなってきました。</p>
+      <div class="testimonial-role">元看護師</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">保険診療で診ているものが病気であり、健康未満・病気未満の不定愁訴をカバーできていなかったことを反省した。「ストレスですね」の一言で終わらせることなく、もう少し適切なアドバイスができるようになりたいと思った。</p>
+      <div class="testimonial-role">医師</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community">
+  <span class="section-label">Community</span>
+  <h2 class="section-title">この場所に来る人</h2>
+  <div class="community-grid">
+    <div class="community-card">
+      <div class="community-card-title">求める仲間</div>
+      <ul class="community-list">
+        <li>「患者が治らない理由を知りたい」と本気で思っている人</li>
+        <li>学んだことをその週に実践してみる人</li>
+        <li>自分の症例を持ち込んで仲間に意見を求められる人</li>
+        <li>自分の失敗を正直に仲間と共有できる人</li>
+        <li>「解決方法を探している」状態で来る人</li>
+      </ul>
+    </div>
+    <div class="community-card">
+      <div class="community-card-title">場の設計</div>
+      <ul class="community-list">
+        <li>月1回の症例検討会（スケジュール固定）</li>
+        <li>年1回の認定試験——「いつでもいい」は永遠にやらない</li>
+        <li>初心者から上級者が混在する垂直統合のコミュニティ</li>
+        <li>「学んだこと」より「試したこと・失敗したこと」が評価される文化</li>
+        <li>卒業生が地域で「分子栄養学的に診てくれる先生」として認知される波及</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <span class="section-label">Scenes</span>
+    <h2 class="section-title">研究会の風景 —— 2025年 総会より</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/soukai-2025-1.jpg" alt="臨床分子栄養医学研究会 2025年総会 集合写真">
+        <div class="gallery-caption">全国から集まった会員たち —— 医師・歯科医師・薬剤師・栄養士・治療家</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/soukai-2025-3.jpg" alt="症例発表の様子">
+        <div class="gallery-caption">会員による症例発表</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/soukai-2025-1359.jpg" alt="質疑応答の様子">
+        <div class="gallery-caption">フロアとの質疑応答</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/soukai-2025-0381.jpg" alt="休憩時間の交流の様子">
+        <div class="gallery-caption">休憩時間も続く、会員同士の情報交換</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-portrait">
+      <img src="assets/soukai-2025-2.jpg" alt="講演する宮澤賢史">
+    </div>
+    <div class="about-right">
+      <span class="section-label">Founder</span>
+      <div class="about-name">宮澤 賢史</div>
+      <div class="about-title">医師・医学博士 / 臨床分子栄養医学研究会 代表 / 京橋ウェルネスクリニック 院長</div>
+      <p class="about-body">
+        2001年から栄養療法を開始。22年以上の臨床キャリアの中で、自分自身が副腎疲労・リーキーガット・水銀蓄積を経験し、「サプリだけでは治らない」という現実を身をもって知った。<br><br>
+        カンザス州のクリニックで研修し、ジャック・チャレム、アンドリュー・ソウル、ウィリアム・ウォルシュ博士と交流。日本ではまだ一般的でない世界標準の機能検査（GI-MAP・有機酸検査・毛髪ミネラル検査）を早期に導入してきた。<br><br>
+        「20年分の遠回りを、読者にさせたくない」——その一念が、この研究会と実践講座を生んだ。
+      </p>
+      <div class="about-quote">
+        患者が賢くなれば治療が変わる。<br>
+        治療家が変われば医療が変わる。<br>
+        医療が変われば、サプリがいらない体を持つ人間が増える。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <span class="section-label">Next Step</span>
+  <h2 class="cta-headline">
+    諦めなくていい不調を、<br>
+    諦めてきた人がいる。
+  </h2>
+  <p class="cta-body">
+    「性格のせい」「加齢のせい」「ストレスのせい」——そう言われ続けてきた不調には、理由がある。知識が広まれば、変わる人生がある。
+  </p>
+  <a href="https://www.bunshieiyou.com/" class="cta-btn" target="_blank">分子栄養学実践講座を見る</a>
+  <a href="#why" class="cta-btn-sub">研究会について詳しく</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">臨床分子栄養医学研究会</div>
+  <div class="footer-note">© 2026 臨床分子栄養医学研究会 / 分子栄養学実践講座運営事務局</div>
+</footer>
+
+</body>
+</html>
