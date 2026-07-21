@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>受講して、何が変わったのか。｜分子栄養学実践講座</title>
+<meta name="description" content="分子栄養学実践講座の受講後アンケートから。思考の転換、体調改善、生活習慣、仕事への応用、生き方の変化。受講者の声を5つの層で公開。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green: #56dc48;
+    --green-hover: #45c838;
+    --green-deep: #081406;
+    --green-light: #4a8567;
+    --bg: #0d0e10;
+    --bg-2: #141619;
+    --ink: #e8e4db;
+    --ink-dim: #a7a396;
+    --ink-faint: #6f6c63;
+    --gold: #4a8567;
+    --gold-soft: #6fcf63;
+    --line: #2a2d31;
+    --serif: "Shippori Mincho", serif;
+    --sans: "Noto Sans JP", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    padding-top: 58px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  .wrap-wide { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 24px;
+    background: rgba(13, 14, 16, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-logo img { height: 34px; width: auto; display: block; }
+
+  .hero {
+    min-height: calc(100vh - 58px);
+    display: flex;
+    align-items: center;
+    padding: 100px 0 88px;
+    position: relative;
+    background:
+      radial-gradient(1000px 520px at 75% -5%, rgba(86,220,72,0.09), transparent 58%),
+      radial-gradient(700px 400px at 10% 90%, rgba(74,133,103,0.08), transparent 50%),
+      linear-gradient(180deg, #0b0c0e 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-brand {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    color: var(--gold-soft);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  .hero .sub {
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(180deg, #6fe862, var(--green));
+    color: var(--green-deep);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.08em;
+    padding: 18px 44px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow: 0 10px 40px rgba(86,220,72,0.22);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 48px rgba(86,220,72,0.32);
+  }
+  .cta-ghost {
+    display: inline-block;
+    margin-left: 16px;
+    color: var(--gold-soft);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+  }
+  .cta-ghost:hover { border-bottom-color: var(--gold-soft); }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; }
+
+  section { padding: 88px 0; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    color: var(--gold);
+    font-size: 0.76rem;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+  }
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.45rem, 3.8vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .lead { color: var(--ink-dim); font-size: 1.02rem; max-width: 680px; }
+  .summary {
+    font-family: var(--serif);
+    font-size: clamp(1.08rem, 2.4vw, 1.32rem);
+    line-height: 2.05;
+    border-left: 2px solid var(--green);
+    padding-left: 28px;
+    margin-top: 36px;
+    color: var(--ink);
+  }
+
+  .layers {
+    display: grid;
+    gap: 0;
+    margin-top: 40px;
+    counter-reset: layer;
+  }
+  .layers a {
+    counter-increment: layer;
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s, padding-left .25s ease;
+  }
+  .layers a:first-child { border-top: 1px solid var(--line); }
+  .layers a:hover { color: var(--gold-soft); padding-left: 8px; }
+  .layers a::before {
+    content: "0" counter(layer);
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
+  .layers a span {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 600;
+  }
+
+  .layer-head { margin-bottom: 40px; }
+  .layer-num {
+    font-family: var(--serif);
+    color: var(--green);
+    font-size: 0.9rem;
+    letter-spacing: 0.28em;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .layer-intro {
+    color: var(--ink-dim);
+    font-size: 0.98rem;
+    margin-top: 14px;
+    max-width: 640px;
+  }
+
+  .voice {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .voice.is-in { opacity: 1; transform: none; }
+  .voice:last-child { border-bottom: none; }
+  .voice .who {
+    display: block;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .voice p {
+    font-family: var(--serif);
+    font-size: clamp(0.98rem, 2vw, 1.08rem);
+    line-height: 2;
+    color: var(--ink);
+  }
+
+  .closing {
+    text-align: center;
+    background:
+      radial-gradient(800px 280px at 50% 0%, rgba(86,220,72,0.07), transparent),
+      var(--bg-2);
+  }
+  .closing .chain {
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    color: var(--gold-soft);
+    letter-spacing: 0.04em;
+    margin: 28px auto 12px;
+    max-width: 560px;
+    line-height: 2;
+  }
+  .closing .lead { margin: 0 auto 40px; }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .cta-outline {
+    display: inline-block;
+    border: 1px solid var(--green-light);
+    color: var(--gold-soft);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    padding: 16px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background .2s, border-color .2s, transform .2s;
+  }
+  .cta-outline:hover {
+    background: rgba(86,220,72,0.06);
+    border-color: var(--green);
+    transform: translateY(-1px);
+  }
+
+  footer {
+    padding: 48px 0 64px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+  footer img { height: 40px; width: auto; margin: 0 auto 14px; display: block; opacity: 0.9; }
+  footer a { color: var(--gold-soft); text-decoration: none; }
+
+  .alt { background: var(--bg-2); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 72px 0 64px; min-height: auto; }
+    section { padding: 64px 0; }
+    .cta-ghost { margin-left: 0; margin-top: 12px; width: 100%; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://www.bunshieiyou.com/" class="site-logo" aria-label="臨床分子栄養医学研究会" target="_blank" rel="noopener">
+    <img src="assets/logo-01.png" alt="臨床分子栄養医学研究会" />
+  </a>
+</header>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-brand">分子栄養学実践講座</p>
+    <h1>受講して、<br />何が変わったのか。</h1>
+    <p class="sub">具体的な症状改善よりも、いちばん多かったのは「不調のとらえ方そのもの」が変わった、という声でした。</p>
+    <div class="hero-actions">
+      <a href="#layers" class="cta-btn">5つの変化を見る</a>
+      <a href="https://kenshi73.github.io/kenkyukai-lp/course/" class="cta-ghost">実践講座の紹介へ</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">FROM SURVEYS</span>
+    <h2 class="section-title">足りない栄養を足す、から<br />根本原因を探して順番に治す、へ。</h2>
+    <p class="lead">その転換が、ほぼすべての変化の土台になっています。</p>
+    <p class="summary">原因不明の不調を「自分のせい」にしていた人たちが、「根本原因は体の仕組みで説明でき、順番に治せる」と知り、当事者として回復し、伝える側に回った。</p>
+  </div>
+</section>
+
+<section id="layers">
+  <div class="wrap">
+    <span class="eyebrow">FIVE LAYERS</span>
+    <h2 class="section-title">変化は、5つの層にある。</h2>
+    <nav class="layers" aria-label="変化の5層">
+      <a href="#change-1"><span>思考・認識の転換</span></a>
+      <a href="#change-2"><span>自分自身の体調改善</span></a>
+      <a href="#change-3"><span>生活習慣の行動変容</span></a>
+      <a href="#change-4"><span>仕事への応用</span></a>
+      <a href="#change-5"><span>心理・生き方の変化</span></a>
+    </nav>
+  </div>
+</section>
+
+<section id="change-1">
+  <div class="wrap">
+    <div class="layer-head">
+      <span class="layer-num">CHANGE 01</span>
+      <h2 class="section-title">思考・認識の転換</h2>
+      <p class="layer-intro">サプリで足す発想から、根本原因を探す発想へ。治療の8割は生活習慣。基準値内＝健康ではない。隠れている不調に気づく。</p>
+    </div>
+
+    <article class="voice">
+      <span class="who">公務員</span>
+      <p>「治療の8割は生活習慣改善」と気づき、サプリまみれであった自分のアプローチが誤っていたと理解した。また、根本原因を外さないこと、そして根本原因の多くは生活習慣であると気づくことができた。これにより、食事、睡眠、運動の管理は欠かさず行っている。さらに、腸内環境が治らない自分であるが、「隠れたピロリ感染」が判明した。まだ治療途中であるが、この講座でピロリを発見することができ、根本解決につながる可能性に期待できている。</p>
+    </article>
+    <article class="voice">
+      <span class="who">医師（精神科）</span>
+      <p>精神科医として原因不明な精神状態の改善に対して、薬物療法や心理治療だけでは改善させることのできない症状を分子栄養学的な治療を導入することで、多くの病態へのアプローチができるようになったことが最も大きい変化である。薬物療法しかできなかった頃の仕事に対するモチベーションと、分子栄養学を学んだ今では仕事に対する取り組みが雲泥の差であり、入院が必要なほどの重症患者でない限りは、クリニックで対応可能な患者の多くに対しては治療的な回答の提示が可能である。これは治療者にとっては革命的な変化であると感じている。</p>
+    </article>
+    <article class="voice">
+      <span class="who">医師（皮膚科）</span>
+      <p>自分はとても元気で体は何も問題がなく健康だと思い込んでいました。楽しく毎日お酒を飲み、太るのがイヤなのでダイエットをして、健康だから何をしてもいいと思っていました。ただ関節が痛くなるのがなぜだろう、と自分の血液検査を分子栄養学的に分析していただいたところ「副腎疲労でアドレナリンで生きているんだよ。」と言われ大きな衝撃をうけました。検査をしたところ、本当に私の身体は悲鳴をあげていたと知り愕然としました。そこから適切な量のサプリをとり、生活態度を改めお酒をやめ、毎日自炊をし、しっかり寝るように心がけ、別人に生まれ変わりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">医師（循環器）</span>
+      <p>医療提供に対する根本がまず変わりました。これまでは検査会社が記載している基準値に入っているかどうかのみを見ており、それらが問題なければ自分とは関係のない領域と考えていました。また、自分は循環器なので、それ以外は専門外であり関係ないと考えていました。この講座をうけて、検査値に対する考え方がかわりました。また、多くの症状や病気に関して、障害されている臓器が違うだけで、おおくの根本原因は同じであること、体がどのような栄養をつかって動いているかということ、我々医師は今後どのポイントで患者に対処しなければならないか（病気の症状を取るだけではなく、原因に対処することや、個人で必要な内容が全く異なること）がなんとなしに見えてきました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">助産師</span>
+      <p>まず採血データの読み方が今までとは全く変わり、そのデータが現れるのに体内で何が起こっているのか、というところまで考えられるようになりました。助産師をしていますが、今まで臨床では、Hbの値が10切ってたら貧血→鉄剤、というふうに短絡的に考えていましたが、なぜその数値になるのか、Hbだけじゃなく他にどの数値を見ればいいのか、生活習慣の中で気をつけられること、食事のアドバイスはできないか、など考えられるようになりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">管理栄養士</span>
+      <p>通常の健康診断では基準値内だったので、自分は健康だと思っていたが、そうではなく体の中ではたんぱく異化や炎症、代謝障害が起きていると思われる状況だと推測できた。生活習慣で一番重要な睡眠をとるようになった。</p>
+    </article>
+  </div>
+</section>
+
+<section id="change-2" class="alt">
+  <div class="wrap">
+    <div class="layer-head">
+      <span class="layer-num">CHANGE 02</span>
+      <h2 class="section-title">自分自身の体調改善</h2>
+      <p class="layer-intro">低血糖・副腎疲労の発見と改善。メンタルの安定。便秘・肌・頭痛・生理痛・アトピーなど、具体症状の変化。</p>
+    </div>
+
+    <article class="voice">
+      <span class="who">歯科医師</span>
+      <p>主食を抜く糖質制限やファスティングをしていましたが、強烈な手足の冷えや倦怠感、ブレインフォグに悩まされていました。副腎疲労、低血糖症があることがわかりましたので糖質制限を辞めて、食事の最後に少量の炭水化物を食べるようになり、冷えや脱力感、動悸がなくなって、低血糖症状が改善されてきました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">公務員</span>
+      <p>19歳から15年にわたる過食嘔吐が治りました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">主婦</span>
+      <p>体調改善の基本は血糖コントロールだと言う事を知りました。また、血糖が性格までも変えてしまう事に驚きました。私はパニック障害があるので、毎日摂る食事は勿論、補食も気をつける様になって、発作を減らす事ができています。</p>
+    </article>
+    <article class="voice">
+      <span class="who">俳優</span>
+      <p>うつ症状が全くなくなったのと、人との関りがとても楽しくなった。悲観的な考えがなくなった。燃え尽き症候群になる根本的な原因がわかったのでならないような食生活、食に対するリスペクトが以前より強くなったので毎日感謝しながら作って食べている。職業柄、セリフの覚えが悪くなったり短期記憶ができなくなってきていたので、検査を通して初めて原因がわかり、それに対処することで少しずつ改善してきたこと。辞めようかと思っていたので改善することで続けていける自信がわいた。</p>
+    </article>
+    <article class="voice">
+      <span class="who">管理栄養士</span>
+      <p>貧血の改善。過敏性腸症候群ガス型の改善。イライラ・気分の波の改善。今までは、自分の考えを貫くことが我儘で悪であるというとらえ方をばかりして、それにより、自己犠牲感も強く、イライラもひどかった。講座を受け、体調も変化することにより、イライラすることも減り、自分を優先させても良い面を見極め、ストレス対処出来る場面が増えてきたように思う。</p>
+    </article>
+    <article class="voice">
+      <span class="who">自営業</span>
+      <p>私は過去に20代でうつ病を患ったことがあったのですが、今振り返ると完全に副腎疲労だったと思います。朝起きられないとか、朝ごはん食べられない、夕方元気になっていく、甘いもの依存など。当時は精神科に行っても甘えているだけとか言われて、自分に落ち込むこともあったが、実際は私の個性なのではなく、体のSOSだったんだなと今になって分かった。当時の私のように体調不良を自分のせいにして落ち込んでいる人はたくさんいると思う、この知識があれば、仕事も辞めなくてもすむかもしれない。</p>
+    </article>
+  </div>
+</section>
+
+<section id="change-3">
+  <div class="wrap">
+    <div class="layer-head">
+      <span class="layer-num">CHANGE 03</span>
+      <h2 class="section-title">生活習慣の行動変容</h2>
+      <p class="layer-intro">食事・補食・睡眠・運動が変わる。サプリも「手当たり次第」から「根拠を持つ／卒業を目指す」へ。</p>
+    </div>
+
+    <article class="voice">
+      <span class="who">治療院</span>
+      <p>副腎疲労があると思っていました。午前中、夕方の疲労感が強く、甘いものや食事後の睡魔が疑問でした。糖質制限をして低血糖も原因と分かりました。毎日の変化は、朝日を浴びて光を網膜に感じるようにしました。糖質、補食を摂るようにしました。鉄を毎日摂っていたのを止め、症状がある時のみにしました。夜12時には布団に入るのを心がけるようにしました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">自営業</span>
+      <p>低血糖対策として、毎食、良質な糖質をとることや一日2〜3回の補食を摂ることで、夕方のイライラやどうしようもない空腹感からの甘いものを食べしまう糖への渇望が減りました。今までダイエットと思い、食べすぎたら、夕食のお米を抜いたり軽めにしたりしていましたが、それにより夜間低血糖を引きおこし、睡眠障害につながっていたということも大きな学びでした。夜間低血糖を治すには昼間の低血糖をなくすことが重要ということも知れて良かったです。</p>
+    </article>
+    <article class="voice">
+      <span class="who">薬剤師</span>
+      <p>生活習慣が大事とは思っていましたが、生活習慣が8割というお話を聞いて優先順位が上がりました。食事は朝食を抜くことも多く、タンパク質も不足しがち。低血糖症状も出ていたと思います。ハチミツや、煮干し粉＋味噌汁、こまめな補食をするようになって、イライラが減ったり、頭が働かない、噛み締めるなどの症状が減ったように思います。筋トレも少しずつ始め、毎日運動にも取り組むようになりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">会社員</span>
+      <p>食事はグルテンフリー・カゼインフリー・カフェインフリーを心掛け、毎日飲んでいたアルコールを週1回に減らし、食品を選ぶ際は、表示を見て購入するようになりました。低血糖にならない為の補食や、消化・吸収を考えてよく噛んで食べることや、夜はできるだけ20時までの食事を心がけています。睡眠も、以前は夜12時以降に就寝してましたが、今は夜11時〜朝5時半まで睡眠をとるようになり、運動も週2回10分程度の筋トレをするようになりました。これらにより、少しではありますが、持病のアトピーが軽減できているように思います。</p>
+    </article>
+    <article class="voice">
+      <span class="who">保健師</span>
+      <p>実際に、カウンセリングを行う中で、サプリメントを服用しておられるかたが多くおられます。けれど、その理由があまり明確ではなく、なんとなく足りないと思ったから、という方が多いです。また、そういう方は調子がさらに悪くなっておられます。今回の講座で、なぜサプリを服用しているかが明確でないと、サプリからの卒業ができないということを学び、本当にそうだと思いました。カウンセリングを行う時の視点が大きく変わりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">医師</span>
+      <p>サプリメントをなくすことがゴールなのだと強く同意しました。今までは補うことばかりを考えてきましたし、世の中の要求もそこにあるという側面はあります。しかし根本治療を望まれたときに対応できるだけの技量と知識を身につけるべきと感じています。</p>
+    </article>
+  </div>
+</section>
+
+<section id="change-4" class="alt">
+  <div class="wrap">
+    <div class="layer-head">
+      <span class="layer-num">CHANGE 04</span>
+      <h2 class="section-title">仕事への応用</h2>
+      <p class="layer-intro">患者・クライアントへのアドバイスの幅と説得力。開業・キャリア拡張・売上。伝えたいという使命感。医師・歯科医師、カウンセラー／治療家など、プロとして使う人の変化。</p>
+    </div>
+
+    <article class="voice">
+      <span class="who">自営業</span>
+      <p>分子栄養学カウンセラーとして開業しました。これに尽きます。自分が栄養で体調や人生が変わったことをたくさんの方たちにお伝えしたいです。不調には必ず根本原因があり、それを見つけて改善することが重要で、さらにはその根本原因を解決するには自分の確固たる決意が必要だということがわかりました。人はそれぞれ個体差がある、なので一人一人が自分の主治医になることが大切です。</p>
+    </article>
+    <article class="voice">
+      <span class="who">総合治療家・パーソナルトレーナー</span>
+      <p>意識的にカゼイン、カフェインを減らしたことで仕事や生活の調子に波がなく、いわゆる菩薩モードに入り、淡々と大切なことだけ（仕事と家庭）に集中できるようになっています。仕事柄（手技施術、パーソナルトレーニング）主に運動器へのアプローチがメインですが、分子栄養学を学んだことで慢性疲労や症状に対して栄養面からのサポートがクライアントへできるようになり、改善された方も増えました。今以上に仕事が楽しいと感じています。</p>
+    </article>
+    <article class="voice">
+      <span class="who">心理セラピスト</span>
+      <p>仕事は心理セラピーを行っており、これまで主たるアプローチが心理的なもの、そして自律神経系を調整するものなどでしたが、栄養的な背景、身体の状態をより深く考察できるようになったと思います。実際にクライエントは低血糖と思われる人が多いと気づきました。不調（症状）は心理的なものはあるけれど、栄養的な要因も大きいということを改めて気づきました。補食を紹介し実践されると、睡眠が改善される方がほとんどです。</p>
+    </article>
+    <article class="voice">
+      <span class="who">歯科医師</span>
+      <p>診療においても、患者様に栄養面での指導を行い、サプリメント販売にはなかなか踏み切れていなかったのですが、歯科で取扱いしやすいものからサプリの販売もスタート出来ました。また、徐々にスタッフも栄養に興味が出て来て、自身の健康面での相談を受けることが多くなり、スタッフとの関係も良くなって来ているように感じます。</p>
+    </article>
+    <article class="voice">
+      <span class="who">医師</span>
+      <p>スポーツ・パフォーマーが多く通院するクリニックをしております。自分も含め間違った栄養摂取をしている人が多く、体のむくみ、疲労感、易骨折性などよく見られます。今までは疼痛や動作、動き方に対処するのが精一杯でしたが、根本である食事、睡眠などを見直すことでアドバイスの幅が広がっております。現在もサプリの販売を通して、クリニックの売り上げにも貢献できていると思います。</p>
+    </article>
+    <article class="voice">
+      <span class="who">会社経営者</span>
+      <p>健康、美容の仕事をしているのでお客様にアドバイスの幅もひろがり、顧客満足度が上がったせいか売り上げも伸びています。まだまだ勉強途中ですが、これからも学びを続け、お体でお悩みの方の力になりたいと思っています。</p>
+    </article>
+  </div>
+</section>
+
+<section id="change-5">
+  <div class="wrap">
+    <div class="layer-head">
+      <span class="layer-num">CHANGE 05</span>
+      <h2 class="section-title">心理・生き方の変化</h2>
+      <p class="layer-intro">自分を責めなくなる。自分が自分の主治医になる。前向きになり、家族へも波及する。</p>
+    </div>
+
+    <article class="voice">
+      <span class="who">接客業</span>
+      <p>補食を小さいおにぎりや干し芋などでする間に低血糖を頻繁に起こさなくなり、自分の性格だと思っていたイライラや悲しみが少なくなりました。一番はイラッとしても抑え込めるようになったこと。幸せを感じれるようになったこと。元気になりたいと心から思えたこと。思考の変化が一番ありました。講座に出会う前は全員敵でした。家族でさえも。お金や売り上げだけが味方でした。そこには今は執着せず、売り上げた時にだけ喜ぶって感じになりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">産業カウンセラー</span>
+      <p>幼少時からの症状が根治しないことや生活上のパフォーマンスの悪さは、自分の怠惰な性格や治療に真面目に取り組まないからだと思い、自分を責める傾向にありました。講座を受講することによって症状には根本原因があり、改善への道筋が見えたことにより、気楽に構えられるようになりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">研究補助</span>
+      <p>不調時に病院や医師を頼るのではなく自分の健康は自分で責任を取るという主体性が出た。他の人の不調の原因だけでなくそれが起こる背景まで想像できるようになり、対処法を示せるようになった。自身や家族の体調が良くなり、生き方が前向きになった。</p>
+    </article>
+    <article class="voice">
+      <span class="who">会社員</span>
+      <p>栄養療法のクリニックに行きただサプリメントを摂取する等受け身ではなく、自分自身が主治医となり主体的に食事、睡眠、運動の生活習慣を改善していく必要があるという考え方に変わった。</p>
+    </article>
+    <article class="voice">
+      <span class="who">自営業</span>
+      <p>いつも食後に眠くなる、夕方に効率が落ちる理由が低血糖の症状だったと分かり、栄養の改善・補食を行う事で元気に働く事ができるようになった。家族にもイライラしてしまう事があり、自分でもなぜこんなにコントロールできないのだろうと自分を責めがちでしたが、イライラする理由と対策が分かり、自分の性格のせいにすることも減って心が楽になりました。</p>
+    </article>
+    <article class="voice">
+      <span class="who">看護師</span>
+      <p>自分が無理をして余計にこじらせていることに気づいた。病態があるためにできないことは仕方ないと自分を肯定できるようになった。そのうえで、副腎疲労をきたしたこれまでの人生を振りかえり自分をねぎらい、自分と向き合い食事から変えていくことを実行している。仕事もまずは無理をせず勤務し、自分が助かったこの栄養療法を職場でスタッフに伝えるなど開始している。</p>
+    </article>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <span class="eyebrow">THE CHAIN</span>
+    <h2 class="section-title">変化は、一本の連鎖で起きる。</h2>
+    <p class="chain">自分が良くなる。<br />考え方が変わる。<br />仕事や患者・クライアントに還元する。<br />伝える使命感を持つ。</p>
+    <p class="lead">受講者の声を並べると、この順番で変化が起きていることがわかります。</p>
+    <div class="cta-row">
+      <a href="https://kenshi73.github.io/kenkyukai-lp/course/" class="cta-btn">実践講座の紹介へ</a>
+      <a href="https://www.bunshieiyou.com/#10" class="cta-outline" target="_blank" rel="noopener">申込・詳細（公式サイト）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="assets/logo-01.png" alt="臨床分子栄養医学研究会" />
+  <p>分子栄養学実践講座 ｜ 受講者アンケート特設ページ<br />
+  <a href="https://kenshi73.github.io/kenkyukai-lp/course/">実践講座の紹介</a> ／
+  <a href="https://www.bunshieiyou.com/" target="_blank" rel="noopener">公式サイト</a></p>
+</footer>
+
+<script>
+  const voices = document.querySelectorAll(".voice");
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+  voices.forEach((v) => io.observe(v));
+</script>
+</body>
+</html>
